@@ -57,7 +57,7 @@
 
 .list-cell {
     -fx-label-padding: 0 0 0 0;
-    -fx-graphic-text-gap : 0;
+    -fx-graphic-text-gap: 0;
     -fx-padding: 0 0 0 0;
     -fx-border-width: 0 0 0 0;
 }
@@ -199,8 +199,8 @@
 }
 
 .button:pressed, .button:default:hover:pressed {
-  -fx-background-color: white;
-  -fx-text-fill: #1d1d1d;
+    -fx-background-color: white;
+    -fx-text-fill: #1d1d1d;
 }
 
 .button:focused {
@@ -299,6 +299,7 @@
 .scroll-bar {
     -fx-background-color: transparent; /* Optional: makes the scrollbar background transparent */
 }
+
 .scroll-bar:vertical .thumb {
     -fx-background-color: #9a6447; /* Sets the vertical scrollbar thumb to brown */
 }
