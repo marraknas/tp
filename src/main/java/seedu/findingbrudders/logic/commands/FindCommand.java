@@ -1,0 +1,61 @@
+package seedu.findingbrudders.logic.commands;
+
+import static java.util.Objects.requireNonNull;
+
+import seedu.findingbrudders.commons.util.ToStringBuilder;
+import seedu.findingbrudders.logic.Messages;
+import seedu.findingbrudders.model.Model;
+import seedu.findingbrudders.model.udder.PersonContainsKeywordsPredicate;
+
+/**
+ * Finds and lists all persons in findingbrudders book whose name contains any of the argument keywords.
+ * Keyword matching is case-insensitive.
+ */
+public class FindCommand extends Command {
+
+    public static final String COMMAND_WORD = "find";
+
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all udders based on optional fields "
+            + "with specified keywords (case-insensitive) and displays them as a list with index numbers.\n"
+            + "Parameters: [n/NAME] [p/PHONE] [e/EMAIL] [r/ROLE] [m/MAJOR] [t/TAGS]...\n"
+            + "Example: " + COMMAND_WORD + " n/John p/98765432 m/cs";
+    public static final String MESSAGE_INCOMPLETE = "Parameters are incomplete.\n"
+            + "Parameters: [n/NAME] [p/PHONE] [e/EMAIL] [r/ROLE] [m/MAJOR] [t/TAGS]...\n"
+            + "Example: " + COMMAND_WORD + " n/John p/98765432 m/cs";
+
+    private final PersonContainsKeywordsPredicate predicate;
+
+    public FindCommand(PersonContainsKeywordsPredicate predicate) {
+        this.predicate = predicate;
+    }
+
+    @Override
+    public CommandResult execute(Model model) {
+        requireNonNull(model);
+        model.updateFilteredPersonList(predicate);
+        return new CommandResult(
+                String.format(Messages.MESSAGE_PERSONS_LISTED_OVERVIEW, model.getFilteredPersonList().size()));
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof FindCommand)) {
+            return false;
+        }
+
+        FindCommand otherFindCommand = (FindCommand) other;
+        return predicate.equals(otherFindCommand.predicate);
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .add("predicate", predicate)
+                .toString();
+    }
+}

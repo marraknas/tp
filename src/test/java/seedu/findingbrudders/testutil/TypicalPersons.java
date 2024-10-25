@@ -1,0 +1,86 @@
+package seedu.findingbrudders.testutil;
+
+import static seedu.findingbrudders.logic.commands.CommandTestUtil.VALID_ADDRESS_AMY;
+import static seedu.findingbrudders.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
+import static seedu.findingbrudders.logic.commands.CommandTestUtil.VALID_EMAIL_AMY;
+import static seedu.findingbrudders.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
+import static seedu.findingbrudders.logic.commands.CommandTestUtil.VALID_MAJOR_BOB;
+import static seedu.findingbrudders.logic.commands.CommandTestUtil.VALID_NAME_AMY;
+import static seedu.findingbrudders.logic.commands.CommandTestUtil.VALID_NAME_BOB;
+import static seedu.findingbrudders.logic.commands.CommandTestUtil.VALID_PHONE_AMY;
+import static seedu.findingbrudders.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
+import static seedu.findingbrudders.logic.commands.CommandTestUtil.VALID_ROLE_BOB;
+import static seedu.findingbrudders.logic.commands.CommandTestUtil.VALID_TAG_FRIEND;
+import static seedu.findingbrudders.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import seedu.findingbrudders.model.AddressBook;
+import seedu.findingbrudders.model.udder.Udder;
+
+/**
+ * A utility class containing a list of {@code Udder} objects to be used in tests.
+ */
+public class TypicalPersons {
+
+    public static final Udder ALICE = new PersonBuilder().withName("Alice Pauline")
+            .withAddress("123, Jurong West Ave 6, #08-111").withEmail("alice@example.com")
+            .withRole("mUdder").withMajor("bza")
+            .withPhone("94351253")
+            .withTags("friends").build();
+    public static final Udder BENSON = new PersonBuilder().withName("Benson Meier")
+            .withAddress("311, Clementi Ave 2, #02-25")
+            .withEmail("johnd@example.com").withPhone("98765432")
+            .withRole("brUdder").withMajor("cs")
+            .withTags("owesMoney", "friends").build();
+    public static final Udder CARL = new PersonBuilder().withName("Carl Kurz").withPhone("95352563")
+            .withEmail("heinz@example.com").withRole("mUdder").withMajor("isys")
+            .withAddress("wall street").build();
+    public static final Udder DANIEL = new PersonBuilder().withName("Daniel Meier").withPhone("87652533")
+            .withEmail("cornelia@example.com").withRole("mUdder").withMajor("ceg")
+            .withAddress("10th street").withTags("friends").build();
+    public static final Udder ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("9482224")
+            .withEmail("werner@example.com").withRole("brUdder").withMajor("cs")
+            .withAddress("michegan ave").build();
+    public static final Udder FIONA = new PersonBuilder().withName("Fiona Kunz").withPhone("9482427")
+            .withEmail("lydia@example.com").withRole("brUdder").withMajor("isec")
+            .withAddress("little tokyo").build();
+    public static final Udder GEORGE = new PersonBuilder().withName("George Best").withPhone("9482442")
+            .withEmail("anna@example.com").withRole("mUdder").withMajor("bza")
+            .withAddress("4th street").build();
+
+    // Manually added
+    public static final Udder HOON = new PersonBuilder().withName("Hoon Meier").withPhone("8482424")
+            .withEmail("stefan@example.com").withAddress("little india").build();
+    public static final Udder IDA = new PersonBuilder().withName("Ida Mueller").withPhone("8482131")
+            .withEmail("hans@example.com").withAddress("chicago ave").build();
+
+    // Manually added - Udder's details found in {@code CommandTestUtil}
+    public static final Udder AMY = new PersonBuilder().withName(VALID_NAME_AMY).withPhone(VALID_PHONE_AMY)
+            .withEmail(VALID_EMAIL_AMY).withAddress(VALID_ADDRESS_AMY).withTags(VALID_TAG_FRIEND).build();
+    public static final Udder BOB = new PersonBuilder().withName(VALID_NAME_BOB).withPhone(VALID_PHONE_BOB)
+            .withEmail(VALID_EMAIL_BOB).withRole(VALID_ROLE_BOB).withAddress(VALID_MAJOR_BOB)
+            .withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND)
+            .build();
+
+    public static final String KEYWORD_MATCHING_MEIER = "Meier"; // A keyword that matches MEIER
+
+    private TypicalPersons() {} // prevents instantiation
+
+    /**
+     * Returns an {@code AddressBook} with all the typical persons.
+     */
+    public static AddressBook getTypicalAddressBook() {
+        AddressBook ab = new AddressBook();
+        for (Udder udder : getTypicalPersons()) {
+            ab.addPerson(udder);
+        }
+        return ab;
+    }
+
+    public static List<Udder> getTypicalPersons() {
+        return new ArrayList<>(Arrays.asList(ALICE, BENSON, CARL, DANIEL, ELLE, FIONA, GEORGE));
+    }
+}

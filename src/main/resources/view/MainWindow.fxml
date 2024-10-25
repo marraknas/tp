@@ -35,7 +35,7 @@
         </MenuBar>
 
         <HBox VBox.vgrow="ALWAYS">
-          <VBox fx:id="personList" styleClass="pane-with-border" HBox.hgrow="SOMETIMES" minWidth="350" prefWidth="350" VBox.vgrow="ALWAYS">
+          <VBox fx:id="udderList" styleClass="pane-with-border" HBox.hgrow="SOMETIMES" minWidth="350" prefWidth="350" VBox.vgrow="ALWAYS">
             <padding>
               <Insets left="10" />
             </padding>
