@@ -63,7 +63,16 @@
         "glossary": "Glossary",
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
-        "deleting-an-udder": "Deleting an Udder"
+        "adding-an-udder": "Adding an Udder",
+        "clearing-all-udders": "Clearing all Udders",
+        "deleting-an-udder": "Deleting an Udder",
+        "editing-an-udder": "Editing an Udder",
+        "finding-an-udder": "Finding an Udder",
+        "listing-all-udders": "Listing all Udders",
+        "scheduling-a-meeting": "Scheduling a Meeting",
+        "listing-all-meetings": "Listing all Meetings",
+        "deleting-a-meeting": "Deleting a Meeting",
+        "editing-a-meeting": "Editing a Meeting"
       },
       "headingKeywords": {}
     },
