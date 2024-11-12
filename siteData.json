@@ -108,10 +108,10 @@
       "title": "User Guide",
       "headings": {
         "findingbrudders-user-guide": "FindingbrUdders User Guide",
-        "table-of-contents": "Table of Contents",
         "quick-start": "Quick start",
-        "before-you-start": "Before you start...",
+        "glossary": "Glossary",
         "features": "Features",
+        "viewing-an-udder": "Viewing an Udder 👀",
         "viewing-help-help": "Viewing help : help 💡",
         "adding-an-udder-add": "Adding an Udder: add 🐄",
         "listing-all-udders-list": "Listing all Udders : list 📜",
